@@ -417,7 +417,13 @@ input[type="submit"] {
   &.active {
     background-color: $hover;
     color: #fff;
-  }
+	}
+	img {
+		width: 30px;
+		height: 28px;
+		width: 30px;
+    height: 28px;
+	}
 }
 .check--list {
 	@include ul-default;

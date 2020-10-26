@@ -11,19 +11,18 @@ function sliders() {
     $('.cat--unit__for').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: false,
+        arrows: true,
         fade: true,
         asNavFor: '.cat--unit__nav'
     });
     $('.cat--unit__nav').slick({
         autoplay: true,
-        slidesToShow: 4,
+        slidesToShow: 5,
         slidesToScroll: 1,
         asNavFor: '.cat--unit__for',
         dots: false,
-        arrows: true,
+        arrows: false,
         focusOnSelect: true,
-        vertical: true,
         responsive: [
             {
                 breakpoint: 600,
@@ -103,6 +102,24 @@ sliders();
 
 $(function(){
 
+    $(".counter .plus").click(function() {
+        event.preventDefault();
+        event.stopPropagation();
+        let input = $(this).siblings('input');
+        let count = input.val();
+        count++;
+        input.attr('value', count);
+    });
+    $(".counter .minus").click(function() {
+        event.preventDefault();
+        event.stopPropagation();
+        let input = $(this).siblings('input');
+        let count = input.val();
+        if (count <= 1) return;
+        count--;
+        input.attr('value', count);
+    });
+
     $("#content>div").hide(); // Скрываем содержание
 	$("#tabs li:first").attr("id","current"); // Активируем первую закладку
 	$("#content div:first").fadeIn(); // Выводим содержание
@@ -114,6 +131,20 @@ $(function(){
         $(this).parent().attr("id","current"); // Активируем закладку
         $('#' + $(this).attr('title')).fadeIn(); // Выводим содержание текущей закладки
     });
+
+    $("#content2>div").hide(); // Скрываем содержание
+	$("#tabs2 li:first").attr("id","current"); // Активируем первую закладку
+	$("#content2 div:first").fadeIn(); // Выводим содержание
+    
+    $('#tabs2 a').click(function(e) {
+        e.preventDefault();        
+        $("#content2>div").hide(); //Скрыть все сожержание
+        $("#tabs2 li").attr("id",""); //Сброс ID
+        $(this).parent().attr("id","current"); // Активируем закладку
+        $('#' + $(this).attr('title')).fadeIn(); // Выводим содержание текущей закладки
+    });
+
+    
 
 
     $('.open--modal').on('click', function(){
