@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Оформление заказа</title>
+	<link rel="stylesheet" href="css/libs.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="preload">
+		<div class="sk-double-bounce">
+			<div class="sk-child sk-double-bounce-1"></div>
+			<div class="sk-child sk-double-bounce-2"></div>
+		</div>
+	</div>
+	
+	<header class="header">
+		<div class="header__upper">
+			<div class="container flex spb center">
+				<div class="nav--btn">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<a href="index.html" class="logo-link"><img src="./img/logo.png" alt=""></a>
+				<div class="col col--italy">
+					<div class="text-sm">Продукция SOLEKO S.P.A. Италия</div>
+					<div class="it-flag">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+	
+				<div class="col col--loc">
+					<div class="col--location text-sm">г. Алматы</div>
+					<div class="dropdown">
+						<a href="tel:+7(727)2780536">+7 (727) 278 05 36</a>
+						<div class="trigger"></div>
+						<div class="dropdown-menu">
+							<a href="tel:+7(727)2780536">+7 (727) 278 05 37</a>
+							<a href="tel:+7(727)2780536">+7 (727) 278 05 38</a>
+							<a href="tel:+7(727)2780536">+7 (727) 278 05 49</a>
+						</div>
+					</div>
+				</div>
+	
+				<div class="col col--loc">
+					<div class="col--location text-sm">г. Нур-Султан</div>
+					<div class="dropdown">
+						<a href="tel:+7(727)2780536">+7 (717) 247 07 30</a>
+						<div class="trigger"></div>
+						<div class="dropdown-menu">
+							<a href="tel:+7(727)2780536">+7 (727) 278 05 37</a>
+							<a href="tel:+7(727)2780536">+7 (727) 278 05 38</a>
+							<a href="tel:+7(727)2780536">+7 (727) 278 05 49</a>
+						</div>
+					</div>
+				</div>
+	
+				<div class="h-soc flex center">
+					<a href="https://wa.me/87272780536" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+					<a href="#" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+				</div>
+	
+			</div>
+		</div>
+	
+		<div class="header__bottom">
+			<div class="container flex spb center">
+				<nav class="nav flex spb center">
+					<div class="dropdown nav-dropdown">
+						<div class="ham">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<a href="#" class="trigger">Каталог</a>
+						<div class="dropdown-menu">
+							<a href="category.html">Контактные линзы</a>
+							<a href="category.html">Аксессуары</a>
+							<a href="category.html">Растворы</a>
+							<a href="category.html">Контактные линзы</a>
+							<a href="category.html">Очки</a>
+							<a href="category.html">Растворы</a>
+						</div>
+					</div>
+	
+					<a href="order.html">Оплата и доставка</a>
+					<a href="#">Отзывы</a>
+					<a href="#" class="active">Новости</a>
+					<a href="contacts.html">Контакты</a>
+				</nav>
+	
+				<div class="search-bar">
+					<div class="m search-trigger"><i class="fa fa-search" aria-hidden="true"></i></div>
+					<input type="search" required placeholder="Поиск по сайту ...">
+					<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+				</div>
+	
+				<a href="order.html" class="cart-link flex center">
+					<img src="./img/basket.svg" alt="">
+					<div class="mark">18</div>
+					<span>Корзина</span>
+				</a>
+	
+			</div>
+		</div>
+	
+	</header>
+	
+	<div class="modal" id="modal-success-add">
+		<div class="modal__layer"></div>
+		<div class="modal__block">
+			<a href="#" class="close"></a>
+			<h4>Товар был добавлен в корзину</h4>
+		</div>
+	</div>
+	
+	<div class="modal" id="modal-success-msg">
+		<div class="modal__layer"></div>
+		<div class="modal__block">
+			<a href="#" class="close"></a>
+			<h4>Ваше сообщение успешно отправлено</h4>
+		</div>
+	</div>
+	
+	<div class="modal" id="modal-success-cart">
+		<div class="modal__layer"></div>
+		<div class="modal__block">
+			<a href="#" class="close"></a>
+			<h4>Ваш заказ успешно оформлен</h4>
+		</div>
+	</div>
+	
+	
+	<div class="modal" id="success-send">
+		<div class="modal__layer"></div>
+		<div class="modal__block">
+			<a href="#" class="close"></a>
+			<h4>Ваша заявка успешно отправлена</h4>
+		</div>
+	</div>
+	<div class="wrapper page cts-page">
+
+    <div class="h-bc container">
+			<div class="breadcrumbs">
+				<ul>
+          <li><a href="index.html">Главная</a></li>
+					<li>Корзина</li>
+				</ul>
+			</div>
+	
+			<h1>Корзина</h1>
+    </div>
+
+    <main class="cart-main">
+      <div class="container">
+        <form action="">
+          <table class="cart_table responsive">
+            <thead>
+              <tr>
+                <th class="cart_table--pic-col">Фото</th>
+                <th class="cart_table--name">Название товара</th>
+                <th>Цена</th>
+                <th>Кол-во</th>
+                <th colspan="2">Сумма</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="cart_table--pic">
+                  <div>
+                    <img src="./img/cardbig.png" alt="">
+                  </div>
+                </td>
+                <td class="t-name">
+                  <div class="name">Trilogy spheric for toric 2 lenti</div>
+                </td>
+                <td class="price-col" data-label="Цена"><div class="price">5000</div></td>
+    
+                <td class="amount-col" data-label="Кол-во">
+                  <div class="counter flex center">
+                    <button class="minus" tabindex="0"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                    <input type="text" value="1" class="input-counter" tabindex="0">
+                    <button class="plus" tabindex="0"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                  </div>
+                </td>
+    
+                <td class="total" data-label="Сумма"><div class="price">10 000</div></td>
+                <td class="td-close"><div class="close"></div></td>
+              </tr>
+    
+              <tr>
+                <td class="cart_table--pic">
+                  <div>
+                    <img src="./img/cardbig.png" alt="">
+                  </div>
+                </td>
+                <td class="t-name">
+                  <div class="name">Trilogy spheric for toric 2 lenti</div>
+                </td>
+                <td class="price-col m-pseudo" data-label="Цена"><div class="price">5000</div></td>
+    
+                <td class="amount-col m-pseudo" data-label="Кол-во">
+                  <div class="counter flex center">
+                    <button class="minus" tabindex="0"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                    <input type="text" value="1" class="input-counter" tabindex="0">
+                    <button class="plus" tabindex="0"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                  </div>
+                </td>
+    
+                <td class="total" data-label="Сумма"><div class="price">10 000</div></td>
+                <td class="td-close"><div class="close"></div></td>
+              </tr>
+              
+            </tbody>
+          </table>
+
+          <div class="cart-total flex center">
+            <span>
+              Итого:
+              <div class="price">15 000</div>
+            </span>
+  
+            <a href="order.html" class="btn open--modal" data-modal="#modal-success-cart">Оформить заказ</a>
+          </div>
+
+        </form>
+      </div>
+    </main>
+
+    <section class="order_form">
+      <div class="container">
+        <h2>Оформление заказа</h2>
+        <form action="">
+          <div class="order_form--unit">
+            <div class="order_form--title">Контактная информация</div>
+            <div class="order_form--body">
+              <div class="order_form--grid3">
+                <input type="text"  placeholder="Ваше имя" required>
+                <input type="tel" placeholder="+7 (___) ___-__-__" required class="tel">
+                <input type="email" placeholder="Эл. почта" required>
+              </div>
+            </div>
+          </div>
+  
+          <div class="order_form--unit">
+            <div class="order_form--title">Доставка</div>
+            <div class="order_form--body">
+              <div class="order_form--grid3">
+                <label class="custom-label custom-label__check-border"><input id="one" type="radio" name="pay" class="custom-checkbox"><b>Курьерская доставка</b>только г. Алматы и г. Нур-Султан<span class="checkmark"></span></label>
+                <label class="custom-label custom-label__check-border"><input id="one" type="radio" name="pay" class="custom-checkbox"><b>Доставка почтой</b>по Казахстану<span class="checkmark"></span></label>
+                <label class="custom-label custom-label__check-border"><input id="one" type="radio" name="pay" class="custom-checkbox"><b>Самовывоз</b>из пункта самовывоза<span class="checkmark"></span></label>
+              </div>
+              <input type="text" required placeholder="Город, улица, дом, строение корпус, квартира" class="address-input">
+            </div>
+          </div>
+  
+          <div class="order_form--unit">
+            <div class="order_form--title">Оплата</div>
+            <div class="order_form--body">
+              <div class="order_form--grid2">
+                <label class="custom-label custom-label__check-border"><input id="two" type="radio" name="delivery" class="custom-checkbox"><b>Наличный расчёт</b>оплата курьеру при получении товара<span class="checkmark"></span></label>
+                <label class="custom-label custom-label__check-border"><input id="two" type="radio" name="delivery" class="custom-checkbox"><b>Оплата картой</b>при получении картами Visa / MasterCard<span class="checkmark"></span></label>
+              </div>
+            </div>
+          </div>
+  
+          <div class="order_form--unit">
+            <div class="order_form--title">Комментарий к заказу</div>
+            <div class="order_form--body">
+              <textarea placeholder="Текст сообщения"></textarea>
+            </div>
+          </div>
+
+          <label for="zxc" class="custom-label agreement custom-label__check-square">
+            <input id="zxc" type="checkbox" checked="" class="custom-checkbox">
+            <div class="text">
+              Я подтверждаю достоверность введенных мною сведений и даю согласие на обработку моих персональных данных в соответствие <br>c 
+              <a href="#">Политикой Конфиденциальности</a>
+              и 
+              <a href="#">Пользовательским соглашением</a>
+            </div>
+            <span class="checkmark"></span>
+          </label>
+
+          <div class="cart-total flex center">
+            <span>
+              Итого:
+              <div class="price">15 000</div>
+            </span>
+  
+            <a href="order.html" class="btn open--modal" data-modal="#modal-success-cart">Оформить заказ</a>
+
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+    
+  </div>
+  <footer class="footer">
+    <div class="footer__upper">
+      <div class="container flex center spb">
+        <a href="https://wa.me/87755662050" target="_blank" class="col--whatsapp">
+          <span>+7 (775) 566 20 50</span>
+        </a>
+  
+        <a href="mailto:soleko2020@mail.ru" target="_blank" class="col--email">
+          <span>soleko2020@mail.ru</span>
+        </a>
+  
+        <a href="#" target="_blank" class="col--inst">
+          <span>solo_vision1</span>
+        </a>
+      </div>    
+    </div>
+  
+    <div class="footer__middle">
+      <div class="container grid3">
+        <div class="f_col f--nav">
+          <div class="f_col--title">Навигация</div>
+          <ul class="check--list">
+            <li><a href="#">Оплата и доставка</a></li>
+            <li><a href="#" class="active">Отзывы</a></li>
+            <li><a href="#">Новости</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+  
+        <div class="f_col f--cat">
+          <div class="f_col--title">Каталог</div>
+          <div class="grid2">
+  
+            <ul class="check--list with--subs">
+              <li class="sub">Контактные линзы</li>
+              <li><a href="category.html">Линзы с диоптриями</a></li>
+              <li><a href="category.html">Естественные линзы</a></li>
+              <li><a href="category.html">Кукольные линзы</a></li>
+              <li><a href="category.html">Карнавальные линзы</a></li>
+            </ul>
+  
+            <ul class="check--list with--subs">
+              <li class="sub">Растворы</li>
+              <li><a href="category.html">Растворы и капли для линз</a></li>
+              <li><a href="category.html">Дорожные наборы для линз</a></li>
+            </ul>
+  
+          </div>
+        </div>
+  
+        <div class="f_col f--locations">
+          <div class="loc--unit">
+            <div class="col--location">г. Алматы</div>
+            <a href="tel:+77272780536">+7 (727) 278 05 36</a>
+            <a href="tel:+77272780536">+7 (775) 566 20 50</a>
+          </div>
+  
+          <div class="loc--unit">
+            <div class="col--location">г. Нур-Султан</div>
+            <a href="tel:+77272780536">+7 (717) 247 07 30</a>
+            <a href="tel:+77272780536">+7 (700) 118 18 52</a>
+          </div>
+        </div>
+      </div>  
+    </div>
+  
+    <div class="footer__bottom">
+      <div class="container flex spb center">
+        <div class="copy">Copyright © 2020 All rights reserved</div>
+        <div class="art-link">
+          <a href="https://www.artmedia.kz/" target="_blank">Создание сайта</a>
+          <img src="./img/art.png" alt="">
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/jquery.js"></script>
+  <script src="js/libs.js"></script>
+  <script>
+    wow = new WOW({
+      boxClass:     'wow',      
+      animateClass: 'animated', 
+      offset:       0,          
+      mobile:       false,       
+      live:         true        
+  })
+  wow.init();		
+  </script>
+  <script src="js/main.js"></script>
+  </body>
+</html>
