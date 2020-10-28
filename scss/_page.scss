@@ -101,6 +101,7 @@
     right: 0;
     bottom: 0;
     z-index: 99;
+    .close:before, .close:after {background-color: $main;}
     .modal__layer {
         position: absolute;
         top: 0;
@@ -111,6 +112,7 @@
     .modal__block {
         width: 620px;
         background-color: #fff;
+        border-radius: 5px;
         position: absolute;
         padding: 20px;
         left: 0;
@@ -123,6 +125,7 @@
             text-align: center;
             padding: 0 10px;
             margin: 0;
+            color: #191716;
         }
     }
     form {
@@ -201,12 +204,13 @@
             }
         }
     }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 640px) {
         .modal__block {
             width: auto;
             left: 10px;
             right: 10px;
         }
+        .close {right: 5px; top: 5px;}
     }
     @media screen and (max-width: 380px) {
         form {

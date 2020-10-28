@@ -18,12 +18,12 @@
 	
 	<header class="header">
 		<div class="header__upper">
-			<div class="nav--btn">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
 			<div class="container flex spb center">
+				<div class="nav--btn">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
 				<a href="index.html" class="logo-link"><img src="./img/logo.png" alt=""></a>
 				<div class="col col--italy">
 					<div class="text-sm">Продукция SOLEKO S.P.A. Италия</div>
@@ -71,7 +71,7 @@
 		<div class="header__bottom">
 			<div class="container flex spb center">
 				<nav class="nav flex spb center">
-					<div class="dropdown">
+					<div class="dropdown nav-dropdown">
 						<div class="ham">
 							<span></span>
 							<span></span>
@@ -100,7 +100,7 @@
 					<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
 				</div>
 	
-				<a href="cart.html" class="cart-link flex center">
+				<a href="order.html" class="cart-link flex center">
 					<img src="./img/basket.svg" alt="">
 					<div class="mark">18</div>
 					<span>Корзина</span>
@@ -115,9 +115,26 @@
 		<div class="modal__layer"></div>
 		<div class="modal__block">
 			<a href="#" class="close"></a>
-			<h4>Успешно добавлено в корзину</h4>
+			<h4>Товар был добавлен в корзину</h4>
 		</div>
 	</div>
+	
+	<div class="modal" id="modal-success-msg">
+		<div class="modal__layer"></div>
+		<div class="modal__block">
+			<a href="#" class="close"></a>
+			<h4>Ваше сообщение успешно отправлено</h4>
+		</div>
+	</div>
+	
+	<div class="modal" id="modal-success-cart">
+		<div class="modal__layer"></div>
+		<div class="modal__block">
+			<a href="#" class="close"></a>
+			<h4>Ваш заказ успешно оформлен</h4>
+		</div>
+	</div>
+	
 	
 	<div class="modal" id="success-send">
 		<div class="modal__layer"></div>
@@ -226,8 +243,8 @@
       <div class="container">
         <ul id="tabs2" class="flex tabs2">
           <li id="current" class="tab-head"><a href="#" title="tab4">Описание</a></li>
-          <li id="" class="tab-head"><a href="#" title="tab5">Характеристики</a></li>
-          <li id="" class="tab-head"><a href="#" title="tab6">Доставка и оплата</a></li>
+          <li class="tab-head"><a href="#" title="tab5">Характеристики</a></li>
+          <li class="tab-head"><a href="#" title="tab6">Доставка и оплата</a></li>
         </ul>
 
         <div id="content2" class="tabs-content content2">
@@ -259,7 +276,7 @@
 
 					<ul id="tabs" class="flex">
 							<li id="current" class="tab-head"><a href="#" title="tab1">Новинки</a></li>
-							<li id="" class="tab-head"><a href="#" title="tab2">Хиты продаж</a></li>
+							<li class="tab-head"><a href="#" title="tab2">Хиты продаж</a></li>
 					</ul>
 				</div>
 				 
@@ -552,8 +569,8 @@
       </div>
     </div>
   </footer>
-  <script type="text/javascript" src="js/jquery.js"></script>
-  <script type="text/javascript" src="js/libs.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/libs.js"></script>
   <script>
     wow = new WOW({
       boxClass:     'wow',      
@@ -564,6 +581,6 @@
   })
   wow.init();		
   </script>
-  <script type="text/javascript" src="js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
